@@ -1,65 +1,75 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen transition-colors">
+      <main className="flex flex-col items-center justify-center flex-1 px-6 py-20 text-center">
+
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-sm font-medium rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          </span>
+          Live Contest: Round #42 starts in 2h 15m
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <h1 className="max-w-4xl text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          Master the Art of <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
+            Competitive Coding
+          </span>
+        </h1>
+
+        <p className="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed">
+          OSPAT is the ultimate arena for developers. Solve complex problems,
+          compete in global rounds, and climb the leaderboard.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
+          <Link
+            href="/login"
+            className="flex h-12 w-full sm:w-48 items-center justify-center rounded-xl bg-blue-600 text-white font-semibold transition-all hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] active:scale-95"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Start Competing
+          </Link>
+          <Link
+            href="/problems"
+            className="flex h-12 w-full sm:w-48 items-center justify-center rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent font-semibold transition-all hover:bg-zinc-50 dark:hover:bg-zinc-900 active:scale-95"
           >
-            Documentation
-          </a>
+            View Problems
+          </Link>
         </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-20 w-full max-w-4xl border-t border-zinc-100 dark:border-zinc-900 pt-12">
+          <div>
+            <div className="text-3xl font-bold">10k+</div>
+            <div className="text-sm text-zinc-500 uppercase tracking-widest mt-1">Active Users</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold">500+</div>
+            <div className="text-sm text-zinc-500 uppercase tracking-widest mt-1">Problems</div>
+          </div>
+          <div className="col-span-2 md:col-span-1">
+            <div className="text-3xl font-bold">24/7</div>
+            <div className="text-sm text-zinc-500 uppercase tracking-widest mt-1">Global Contests</div>
+          </div>
+        </div>
+
       </main>
+
+      <div className="py-10 flex justify-center items-center opacity-30 grayscale hover:grayscale-0 transition-all">
+        <div className="flex items-center gap-2">
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Built with Next.js"
+            width={80}
+            height={16}
+          />
+          <span className="text-xs font-mono uppercase">Engineered by Tiwari</span>
+        </div>
+      </div>
     </div>
   );
 }
